@@ -1,0 +1,11 @@
+{
+  "name": "Xray-Codespace",
+  "postCreateCommand": "bash setup.sh",
+  "portsAttributes": {
+    "8080": {
+      "label": "Xray-Inbound",
+      "onAutoForward": "notify",
+      "visibility": "public"
+    }
+  }
+}
