@@ -1,11 +1,18 @@
 {
   "name": "Xray-Codespace",
-  "postCreateCommand": "bash setup.sh",
+  "image": "://microsoft.com",
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["setup.sh"]
+    }
+  },
+  "postCreateCommand": "chmod +x setup.sh && ./setup.sh",
   "portsAttributes": {
     "8080": {
-      "label": "Xray-Inbound",
-      "onAutoForward": "notify",
+      "label": "Xray-Server",
+      "onAutoForward": "ignore",
       "visibility": "public"
     }
-  }
+  },
+  "forwardPorts": [8080]
 }
